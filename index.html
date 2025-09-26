@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untukmu 💌</title>
+
+  <!-- Import font Indie Flower -->
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Indie Flower', cursive; /* 🎨 vibe santai & informal */
+      background: linear-gradient(to bottom right, #a7d8ff, #d3cfff);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* layer bunga gugur */
+    .petal-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+      animation: fadeIn 1.5s ease;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* teks dalam card rata kanan-kiri + indentasi */
+    .card .message p {
+      text-align: justify;
+      line-height: 1.8;  /* ✨ lebih lega untuk handwriting */
+      font-size: 18px;   /* ✨ biar lebih enak dibaca */
+    }
+
+    .card .message p + p {
+      text-indent: 2em;
+    }
+
+    #music-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      background: #ff6b81;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      animation: pulse 1.5s infinite;
+      z-index: 20;
+    }
+
+    #music-btn:hover {
+      background: #e4546c;
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    /* gaya kelopak sakura */
+    .petal {
+      position: absolute;
+      width: 25px;
+      height: 30px;
+      background-color: pink;
+      border-radius: 60% 60% 80% 80% / 100% 100% 60% 60%;
+      opacity: 0.9;
+      pointer-events: none;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Layer bunga -->
+  <div class="petal-container" id="petal-container"></div>
+
+  <!-- Tombol musik -->
+  <button id="music-btn" onclick="toggleMusic()">▶️ Putar Musik</button>
+
+  <!-- Card tetap di tengah -->
+  <div class="card">
+    <h1>Untukmu 💌</h1>
+    <div class="message">
+      <p>Alow, hhe, i bingung sih mau ngetik apa...
+First of all, i mau makasih banget udah nemenin i sampai i udah 7belas taun ;p I mau cerita ajadeh dulyu, i bikin ini buat cerita dan bilang thanks ajasih.. soalnya, kalo i ngomong langsung i takut gagap, hhe. Basic dulu deh xixi. Aku sebenarnya, prefer dipanggil tasya sih.. Suka aja dipanggil gitu, terus ak bingung juga suka warna apa,, pilih biru krna pick random ;p Aku suka mtk pake banget, cinta? syank? idaman aku? hhe. Dulu aku ngerjain mtk juga pusing kok. Aku milih buat rajin mtk juga.. supaya keren. beneran. maf klo alay npd kampung tpi ak ngerjain mtk beneran buat impress orang orang.. soalnya klo aku ngomong tentang mtk aku ngerasa diliat didengar gt nah... soalnya klo dirumah sering ngga didenger, hhe. kadang klo aku ngomogng pun gk kedengeran, even when aku teriak. hhe, makasi udah dengerin i yapping mtk. i suka klo km nanyain mtk, lovit.</p>
+      <p>Udah yapping mtk nya, i mau cerita slice of life i selama 17 taun.
+Dulu waktu tk, aku pernah gigit lengan teman aku soalnya aku kd suka sm iny. kd suka aja. sampai tangan nya berbekas trus aku dimarahin gurunya.. waktu aku sd aku ngerasa gak ada teman, padahal ada aja kok yang nemenin, tapi mereka awalnya bertiga trus yang satu gak ikut nemenin aku soalnya inya ga suka aku. jadi inya ngerasa klo aku ngambil teman inya,, trus inya ngadu ke mamahnya klo inya gak ditemenin sekelasan dan itu gara gara aku yang nyuruh. trus mamahnya lapor ke guru trus kami ber4 dipanggil ke ruang kepsek.. jujur alay? tapi yaudah terus jadinya kami berteman ber4 sampai sekarang tapi gak deket deket banget sih...Waktu aku smp, aku ga ada temen yang setemenan itu juga sih, kayak temenan biasa ae Aku ada kok temen, kadang besirkel kadang berdua kadang bertiga dan itupun beda beda orangnya, aku kayak gabisa berteman sama itu itu aja, ngomong sama dia aja. jadinya aku sering 'ngundurin diri' dari pertemanan Kayaknya dari yapping ini sebenarnya aku problematik ya? apa avoidant? moh idk, tpi aku serasa selalu gak cocok berteman. Jujur kaget aku bisa ada sirkel di SMA,, i never picture myself living this kind of shs. sekali lagi, makassih udah nerima aku sebagai teman. i really deep down appreciate. </p>
+      <p>Udah ah yapping nya, i sekarang mau say thanks. wawa,, hy. aku bingung mau ngomong apa,, dulu aku kira</p>
+   </div>
+  </div>
+
+  <!-- Player YouTube tersembunyi -->
+  <div id="yt-player"></div>
+
+  <!-- Script YouTube API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+    let isPlaying = false;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-player', {
+        height: '0',
+        width: '0',
+        videoId: 'sXfDLuzSY-Y', // ✨ versi instrumental
+        playerVars: { autoplay: 0, loop: 1, playlist: 'sXfDLuzSY-Y' }
+      });
+    }
+
+    function toggleMusic() {
+      const btn = document.getElementById("music-btn");
+      if (!isPlaying) {
+        player.playVideo();
+        btn.textContent = "⏸️ Jeda Musik";
+        isPlaying = true;
+      } else {
+        player.pauseVideo();
+        btn.textContent = "▶️ Putar Musik";
+        isPlaying = false;
+      }
+    }
+
+    // 🌸 Script animasi kelopak gugur
+    const colors = ["pink", "violet", "yellow", "lightgreen"];
+    const container = document.getElementById("petal-container");
+
+    function createPetal() {
+      const petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDuration = 6 + Math.random() * 5 + "s";
+      petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      petal.style.transform = `rotate(${Math.random() * 360}deg) scale(${0.8 + Math.random()*1.2})`;
+      container.appendChild(petal);
+
+      setTimeout(() => { petal.remove(); }, 12000);
+    }
+
+    setInterval(createPetal, 400);
+  </script>
+</body>
+</html>
